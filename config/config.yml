@@ -1,0 +1,16 @@
+
+default: &default
+  browser: chrome
+  base_url: http://localhost:3000
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+  base_url: https://opensource-demo.orangehrmlive.com/web/index.php
+
+production:
+  <<: *default
+  base_url: https://opensource-demo.orangehrmlive.com/web/index.php
+
