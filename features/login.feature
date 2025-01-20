@@ -3,6 +3,7 @@ Feature: Login
 
   Scenario: User fails to log in with invalid credentials
     Given I am on the login page
+    And  A user exists
     When I log in with invalid credentials
     Then I should see login error
 

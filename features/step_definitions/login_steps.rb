@@ -4,7 +4,8 @@ Given('I am on the login page') do
 end
 
 Given('A user exists') do
-  @user = FactoryBot.create(:user)
+  @user = FactoryBot.build(:user)
+
 end
 
 When('I log in with valid credentials') do
@@ -12,7 +13,7 @@ When('I log in with valid credentials') do
 end
 
 When('I log in with invalid credentials') do
-  @page.login("Admin", "InvalidPassword")
+  @page.login(@user.username, 'wrong-password')
 end
 
 Then('I should see login error') do
